@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1280px; height: 640px; }
+  body {
+    font-family: Inter, -apple-system, sans-serif;
+    background: #F2F5F9;
+    color: #1C2533;
+    display: flex;
+    align-items: center;
+    padding: 0 72px;
+    gap: 56px;
+    overflow: hidden;
+  }
+  .text { flex: 1; }
+  .name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 22px;
+    color: #3266AE;
+    background: #E3EBF7;
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 10px;
+    margin-bottom: 28px;
+  }
+  h1 { font-size: 56px; line-height: 1.05; font-weight: 800; letter-spacing: -1.5px; }
+  h1 em { font-style: normal; color: #E2685E; }
+  p { font-size: 24px; line-height: 1.45; color: #56637A; margin-top: 22px; max-width: 560px; }
+  .tags { display: flex; gap: 10px; margin-top: 34px; flex-wrap: wrap; }
+  .tag { font-size: 17px; font-weight: 600; color: #3266AE; background: #fff; border: 1px solid #DCE3EC; padding: 8px 14px; border-radius: 999px; }
+  .demo { width: 420px; display: flex; flex-direction: column; gap: 14px; overflow: hidden; border-radius: 22px; }
+  .row { position: relative; height: 96px; }
+  .back {
+    position: absolute; inset: 0; border-radius: 22px; background: #E2685E;
+    display: flex; align-items: center; justify-content: flex-end; padding-right: 36px;
+    color: #fff; font-size: 15px; font-weight: 600;
+  }
+  .mark { display: flex; flex-direction: column; align-items: center; gap: 6px; transform: scale(1.2); }
+  .card {
+    position: absolute; inset: 0; background: #fff; border-radius: 22px;
+    display: flex; align-items: center; padding: 0 24px;
+    box-shadow: 0 1px 2px rgba(28, 37, 51, 0.04);
+  }
+  .card.swiped { transform: translateX(-180px); box-shadow: 8px 0 24px rgba(28, 37, 51, 0.10); }
+  .card.swiped-right { transform: translateX(170px); box-shadow: -8px 0 24px rgba(28, 37, 51, 0.10); }
+  .back.right { background: #3266AE; justify-content: flex-start; padding-right: 0; padding-left: 36px; }
+  .dot { width: 12px; height: 12px; border-radius: 6px; background: #3266AE; margin-right: 16px; flex: none; }
+  h1 em.blue { color: #3266AE; }
+  .amount { font-size: 22px; font-weight: 700; }
+  .sub { font-size: 16px; color: #6B7788; margin-top: 3px; }
+  .pill { margin-left: auto; font-size: 16px; font-weight: 700; color: #3266AE; background: #EAF0F9; padding: 7px 13px; border-radius: 999px; }
+  .undo {
+    background: #fff; border: 1px solid #DCE3EC; border-radius: 22px; height: 64px;
+    display: flex; align-items: center; padding: 0 24px; font-size: 18px;
+  }
+  .undo b { margin-left: auto; color: #3266AE; font-weight: 700; }
+</style>
+</head>
+<body>
+  <div class="text">
+    <div class="name">react-native-full-swipe</div>
+    <h1>One swipe.<br><em class="blue">Any action</em><br>on either side.</h1>
+    <p>Full-swipe actions for React Native rows: delete, archive, mark as read. A threshold you can feel, and undo built in.</p>
+    <div class="tags">
+      <span class="tag">Reanimated</span>
+      <span class="tag">Gesture Handler</span>
+      <span class="tag">Expo</span>
+      <span class="tag">TypeScript</span>
+    </div>
+  </div>
+  <div class="demo">
+    <div class="row">
+      <div class="back right">
+        <div class="mark">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>
+          Read
+        </div>
+      </div>
+      <div class="card swiped-right"><span class="dot"></span><div><div class="amount">Anna</div><div class="sub">Are we still on for tonight?</div></div></div>
+    </div>
+    <div class="row">
+      <div class="back">
+        <div class="mark">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/></svg>
+          Delete
+        </div>
+      </div>
+      <div class="card swiped"><span class="dot"></span><div><div class="amount">Design team</div><div class="sub">New mockups are in Figma</div></div></div>
+    </div>
+    <div class="row">
+      <div class="card"><span class="dot" style="background:transparent"></span><div><div class="amount" style="font-weight:500">Mom</div><div class="sub">Call me when you can</div></div></div>
+    </div>
+    <div class="undo">Message from GitHub deleted <b>Undo</b></div>
+  </div>
+</body>
+</html>

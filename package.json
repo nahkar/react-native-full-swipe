@@ -1,0 +1,112 @@
+{
+  "name": "react-native-full-swipe",
+  "version": "0.1.0",
+  "description": "Full-swipe actions for React Native rows: swipe past a threshold you can feel to delete, archive or mark as read, with a different action on each side and an undo bar. Reanimated + Gesture Handler, UI thread, TypeScript.",
+  "keywords": [
+    "react-native",
+    "expo",
+    "swipe",
+    "full-swipe",
+    "swipe-actions",
+    "swipeable",
+    "swipeable-row",
+    "swipe-to-delete",
+    "swipe-to-archive",
+    "swipe-list",
+    "leading-trailing-actions",
+    "undo",
+    "snackbar",
+    "reanimated",
+    "gesture-handler",
+    "ios",
+    "android",
+    "list",
+    "row",
+    "typescript"
+  ],
+  "license": "MIT",
+  "author": "Dmitriy Belenov",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nahkar/react-native-full-swipe.git"
+  },
+  "homepage": "https://github.com/nahkar/react-native-full-swipe#readme",
+  "bugs": {
+    "url": "https://github.com/nahkar/react-native-full-swipe/issues"
+  },
+  "source": "./src/index.ts",
+  "main": "./lib/module/index.js",
+  "types": "./lib/typescript/src/index.d.ts",
+  "exports": {
+    ".": {
+      "source": "./src/index.ts",
+      "types": "./lib/typescript/src/index.d.ts",
+      "default": "./lib/module/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "lib",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "bob build",
+    "typecheck": "tsc --noEmit",
+    "test": "jest",
+    "prepare": "bob build"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-native": ">=0.74.0",
+    "react-native-gesture-handler": ">=2.16.0",
+    "react-native-reanimated": ">=3.10.0"
+  },
+  "devDependencies": {
+    "@testing-library/react-native": "^14.0.1",
+    "@types/jest": "^30.0.0",
+    "@types/react": "~19.2.2",
+    "expo": "~57.0.25",
+    "jest": "^30.5.1",
+    "jest-expo": "~57.0.5",
+    "react": "19.2.3",
+    "react-native": "0.86.3",
+    "react-native-builder-bob": "^0.43.1",
+    "react-native-gesture-handler": "~2.32.0",
+    "react-native-reanimated": "4.5.1",
+    "react-native-worklets": "0.10.1",
+    "react-test-renderer": "19.2.3",
+    "typescript": "~6.0.3"
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      [
+        "module",
+        {
+          "esm": true
+        }
+      ],
+      [
+        "typescript",
+        {
+          "project": "tsconfig.build.json"
+        }
+      ]
+    ]
+  },
+  "jest": {
+    "preset": "jest-expo",
+    "modulePathIgnorePatterns": [
+      "<rootDir>/lib/"
+    ],
+    "setupFiles": [
+      "<rootDir>/jest.setup.js"
+    ],
+    "resolver": "react-native-worklets/jest/resolver"
+  }
+}
